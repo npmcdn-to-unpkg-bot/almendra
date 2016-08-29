@@ -1,0 +1,6 @@
+{
+    "require": {
+        "elasticsearch/elasticsearch": "dev-master",
+        "psr/log": "^1.0"
+    }
+}
