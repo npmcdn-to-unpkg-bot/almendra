@@ -24,6 +24,10 @@ class ComposerStaticInit5876c23a262252cdfbb0bebbcbbd64a4
         array (
             'Elasticsearch\\' => 14,
         ),
+        'A' => 
+        array (
+            'Almendra\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -42,6 +46,10 @@ class ComposerStaticInit5876c23a262252cdfbb0bebbcbbd64a4
         'Elasticsearch\\' => 
         array (
             0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
+        ),
+        'Almendra\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/dist',
         ),
     );
 

@@ -6,11 +6,10 @@
 
 		<!-- join form -->
 		<form action="<?php echo $join_action; ?>" method="POST" role="form" 
-			id="attending">
+			id="attending" >
 
-
-			<legend>Attending</legend>
-			<em>Join a room using its ID.</em>
+			<h3>Attending</h3>
+			<hr>
 
 			<div class="form-group">
 				<label for="">What's the room ID? </label>
@@ -20,7 +19,7 @@
 			<input type="hidden" class="form-control" name="nonce" value="<?php echo $nonce; ?>">
 			
 
-			<button type="submit" class="btn btn-primary">Join this room</button>
+			<button type="submit" class="btn btn-danger">Join this room</button>
 		</form><!-- /.join-form -->
 
 	</div>
@@ -33,8 +32,8 @@
 			id="presenting">
 
 
-			<legend>Presenting?</legend>
-			<em>Create a room to start you Q&A session.</em>
+			<h3>Presenting?</h3>
+			<hr>
 
 			<div class="form-group">
 				<label for="">Tell us your name </label>
@@ -54,7 +53,7 @@
 			<input type="hidden" class="form-control" name="nonce" value="<?php echo $nonce; ?>">
 			
 
-			<button type="submit" class="btn btn-primary">Create your room</button>
+			<button type="submit" class="btn btn-danger">Create your room</button>
 		</form><!-- /.present-form -->
 
 	</div>

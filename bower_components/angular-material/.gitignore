@@ -1,9 +1,0 @@
-*.log
-*.sw*
-.DS_STORE
-/.idea/
-default-theme.css
-/bower_components
-/vendor
-/example-src
-/assets

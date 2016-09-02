@@ -59,10 +59,17 @@ if (DEBUG === true) {
 // set the timezone (avoids a notice)
 date_default_timezone_set(APP_TIMEZONE);
 
+
 // register class_loader() as the autoloader function
-spl_autoload_register('class_autoloader');
+//spl_autoload_register('class_autoloader');
+require_once __DIR__ . '/bootstrap/app.php';
+
+
 
 // -------------------------------------------------------
+
+// 1. routing
+// 2. once the route is resolved, call the controller
 
 /**
  *
@@ -76,15 +83,21 @@ $options = $uri_array;
 
 // set a default view if nothing is passed in the URI (i.e. on the home page)
 if (empty($class_name)) {
-	$class_name = 'Home';
+	$class_name = '\Almendra\Controllers\Home';
+} else {
+	// resolve path
+	// @todo path resolver class
+	$class_name = "\Almendra\Controllers\\" .  $class_name;
 }
 
 // initialize the requested view, or else throws a 404 error
 try {
+	//$controller = new {"Almendra\Controllers\\$class_name"}($options);
 	$controller = new $class_name($options);
+
 } catch (Exception $e) {
 	$options[1] = $e -> getMessage();
-	$controller = new ErrorView($options);
+	$controller = new Almendra\Controllers\ErrorView($options);
 	//throw new Exception($options[1], 1);
 	
 
@@ -152,9 +165,6 @@ function parse_uri() {
  * @return string 			The controller classname
  */
 function get_controller_classname(&$uri_array) {
-	//var_dump( $uri_array);
-	//die();
-
 	$controller = array_shift($uri_array);
 	
 	return ucfirst($controller);

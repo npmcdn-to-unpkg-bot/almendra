@@ -1,4 +1,4 @@
-<section>
+<div class="col-sm-12">
 	<h2>Error</h2>
 	<p>
 		<code><?php echo $message; ?></code>
@@ -6,6 +6,6 @@
 	<p>
 		<a href="<?php echo $home_link; ?>">
 				Back to the home page
-			</a>
+		</a>
 	</p>
-</section>
+</div>
